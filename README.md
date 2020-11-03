@@ -15,7 +15,7 @@ npm install --save react-flex-animations
 ```tsx
 import React, { useState, useEffect } from 'react'
 
-import { AnimatedFlexbox } from 'react-flex-animations'
+import AnimatedFlexbox from 'react-flex-animations'
 import styled from 'styled-components';
 
 
