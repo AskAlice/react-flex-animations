@@ -9,22 +9,23 @@ interface Props {
 
 const shrink = keyframes`
 to {
-  flex: .01;
-  flex: .00001;
+  flex: 0.01;
+  flex: 0.00001;
 }
 `
 
 const Spacer = styled(({ component, className }) => {
   const Component = component?.type || component
-  console.log(Component)
   return <Component className={className} />
 })`
   height: 100%;
-  flex: ${(props) => props.leftOver};
+  flex: ${(props) => props.leftover};
+
   &.hidden {
-    flex: ${(props) => props.leftOver};
+    flex: ${(props) => props.leftover};
     animation: ${shrink} 500ms ease forwards;
   }
+
   &.show {
     flex: 0.01;
     flex: 0.00001;
@@ -43,9 +44,7 @@ const Spaced = styled(
     className,
     ...rest
   }) => {
-    console.log(className)
     const Component = component?.type || component
-    console.log(component?.props['data-hidden'])
     const spacing = (1 - ratio) / 2
     return (
       <Fragment>
@@ -82,10 +81,12 @@ const Spaced = styled(
   padding: 0;
   flex: ${(props) => props.ratio};
   height: 100%;
+
   &.hidden {
     flex: ${(props) => props.ratio};
     animation: ${shrink} 500ms ease forwards;
   }
+
   &.show {
     flex: 0.00001;
     animation: ${(props) => keyframes`to{ flex: ${props.ratio};}`} 500ms ease
@@ -103,14 +104,7 @@ const Flex = styled(({ component, children, className }) => {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   text-align: center;
-  & *:nth-child(odd) {
-    background: #039ad1;
-  }
-  & *:nth-child(even) {
-    background: #03d19a;
-  }
 `
 
 export const AnimatedFlexbox = ({
@@ -119,9 +113,6 @@ export const AnimatedFlexbox = ({
   spacerComponent = 'section',
   ...rest
 }: Props) => {
-  console.log(children)
-  console.log(React.Children)
-
   return (
     <Flex
       children={Children.map(
@@ -142,3 +133,5 @@ export const AnimatedFlexbox = ({
     />
   )
 }
+
+export default AnimatedFlexbox
