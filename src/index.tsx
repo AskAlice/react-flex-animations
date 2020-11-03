@@ -107,7 +107,7 @@ const Flex = styled(({ component, children, className }) => {
   text-align: center;
 `
 
-export const AnimatedFlexbox = ({
+const AnimatedFlexbox = ({
   children,
   component = 'section',
   spacerComponent = 'section',
