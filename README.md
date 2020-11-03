@@ -13,18 +13,38 @@ npm install --save react-flex-animations
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import MyComponent from 'react-flex-animations'
-import 'react-flex-animations/dist/index.css'
+import { AnimatedFlexbox } from 'react-flex-animations'
+import styled from 'styled-components';
+const Nav = styled(AnimatedFlexbox)`
+height:72px;
+`;
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const Example = () => {
+    const [hide,setHide] = useState(0);
+      useEffect(() => {
+        const t = setTimeout(()=>setHide(hide+1),2000);
+        return () => {
+          clearTimeout(t);
+        }
+      }, [hide])
+     return (
+        <Nav component="nav" spacerComponent="div">
+          <section data-hidden={hide%4===1}>
+          logo here
+          </section>
+          <section data-hidden={hide%4===2}>
+          middle content here
+          </section>
+          <section data-hidden={hide%4===0}>
+          right content here
+          </section>
+        </Nav>
+     );
 }
 ```
 
 ## License
 
-MIT © [section-io](https://github.com/section-io)
+MIT © [AskAlice.me](https://github.com/AskAlice)

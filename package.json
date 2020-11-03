@@ -2,7 +2,7 @@
   "name": "react-flex-animations",
   "version": "1.0.0",
   "description": "Show/hide flexbox items with animation",
-  "author": "section-io",
+  "author": "AskAlice",
   "license": "MIT",
   "repository": "section-io/react-flex-animations",
   "main": "dist/index.js",
