@@ -133,5 +133,5 @@ const AnimatedFlexbox = ({
     />
   )
 }
-
+export { AnimatedFlexbox }
 export default AnimatedFlexbox
