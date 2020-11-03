@@ -17,8 +17,20 @@ import React, { useState, useEffect } from 'react'
 
 import { AnimatedFlexbox } from 'react-flex-animations'
 import styled from 'styled-components';
+
+
 const Nav = styled(AnimatedFlexbox)`
 height:72px;
+`;
+
+const RightNav = styled.section`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    margin:0;
+    padding:0;
 `;
 
 const Example = () => {
@@ -34,12 +46,25 @@ const Example = () => {
           <section data-hidden={hide%4===1}>
           logo here
           </section>
+          {/* you can use any html element as a child */}
           <section data-hidden={hide%4===2}>
           middle content here
           </section>
-          <section data-hidden={hide%4===0}>
-          right content here
-          </section>
+          {/* components work too! */}
+          <RightNav data-hidden={hide%4===0}>
+            <section>
+              <span role="img" aria-label="Help">❓</span>
+            </section>
+            <section>
+              <span role="img" aria-label="Bell">🔔</span>
+            </section>
+            <section>
+              <span role="img" aria-label="Settings">⚙</span>
+            </section>
+            <section>
+              <span role="img" aria-label="User">👤</span>
+            </section>
+          </RightNav>
         </Nav>
      );
 }
