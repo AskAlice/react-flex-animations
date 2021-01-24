@@ -18,7 +18,6 @@ npm install --save react-flex-animations styled-components
 import React from 'react'
 
 import { AnimatedFlexbox } from 'react-flex-animations'
-import 'react-flex-animations/dist/index.css'
 import styled from 'styled-components';
 
 const Nav = styled(AnimatedFlexbox)`
