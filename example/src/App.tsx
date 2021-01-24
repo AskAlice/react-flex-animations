@@ -13,7 +13,7 @@ section:nth-child(even){
   background:#bada55;
 }
 `;
-const Sidebar = styled(AnimatedFlexbox)`
+const ImageRow = styled(AnimatedFlexbox)`
 width:fit-content;
 > *{
   align-items:flex-start;
@@ -54,7 +54,7 @@ const App = () => {
         <section><span role="img" aria-label="User">👤</span></section>
       </Test>
     </Nav>
-    <Sidebar>
+    <ImageRow>
     <section data-hidden={!(hide%4)} >   <img src="https://picsum.photos/300/300" /></section>
     <section data-hidden={!(hide%3)} >   <img src="https://picsum.photos/300/301" /></section>
     <section data-hidden={3===(hide%4)} ><img src="https://picsum.photos/300/302" /></section>
@@ -63,27 +63,27 @@ const App = () => {
     <section data-hidden={6===(hide%8)} ><img src="https://picsum.photos/300/305" /></section>
     <section data-hidden={7===(hide%8)} ><img src="https://picsum.photos/300/306" /></section>
     <section data-hidden={2===(hide%8)} ><img src="https://picsum.photos/300/307" /></section>
-    </Sidebar>
-    <Sidebar>
+    </ImageRow>
+    <ImageRow>
     <section data-hidden={!(hide%4)} >   <img src="https://picsum.photos/308/200" /></section>
+    <section data-hidden={6===(hide%7)} ><img src="https://picsum.photos/305/205" /></section>
+    <section data-hidden={4===(hide%7)} ><img src="https://picsum.photos/303/203" /></section>
+    <section data-hidden={2===(hide%7)} ><img src="https://picsum.photos/307/207" /></section>
+    <section data-hidden={5===(hide%7)} ><img src="https://picsum.photos/304/204" /></section>
     <section data-hidden={!(hide%3)} >   <img src="https://picsum.photos/301/201" /></section>
     <section data-hidden={3===(hide%4)} ><img src="https://picsum.photos/302/202" /></section>
-    <section data-hidden={4===(hide%8)} ><img src="https://picsum.photos/303/203" /></section>
-    <section data-hidden={5===(hide%8)} ><img src="https://picsum.photos/304/204" /></section>
-    <section data-hidden={6===(hide%8)} ><img src="https://picsum.photos/305/205" /></section>
-    <section data-hidden={7===(hide%8)} ><img src="https://picsum.photos/306/206" /></section>
-    <section data-hidden={2===(hide%8)} ><img src="https://picsum.photos/307/207" /></section>
-    </Sidebar>
-    <Sidebar>
+    <section data-hidden={7===(hide%7)} ><img src="https://picsum.photos/306/206" /></section>
+    </ImageRow>
+    <ImageRow>
     <section data-hidden={!(hide%4)} >   <img src="https://picsum.photos/309/208" /></section>
     <section data-hidden={!(hide%3)} >   <img src="https://picsum.photos/301/209" /></section>
-    <section data-hidden={3===(hide%4)} ><img src="https://picsum.photos/302/210" /></section>
-    <section data-hidden={4===(hide%8)} ><img src="https://picsum.photos/303/211" /></section>
-    <section data-hidden={5===(hide%8)} ><img src="https://picsum.photos/304/212" /></section>
-    <section data-hidden={6===(hide%8)} ><img src="https://picsum.photos/305/213" /></section>
-    <section data-hidden={7===(hide%8)} ><img src="https://picsum.photos/306/214" /></section>
-    <section data-hidden={2===(hide%8)} ><img src="https://picsum.photos/307/215" /></section>
-    </Sidebar>
+    <section data-hidden={6===(hide%4)} ><img src="https://picsum.photos/302/210" /></section>
+    <section data-hidden={2===(hide%8)} ><img src="https://picsum.photos/303/211" /></section>
+    <section data-hidden={0===(hide%8)} ><img src="https://picsum.photos/304/212" /></section>
+    <section data-hidden={3===(hide%6)} ><img src="https://picsum.photos/305/213" /></section>
+    <section data-hidden={2===(hide%6)} ><img src="https://picsum.photos/306/214" /></section>
+    <section data-hidden={5===(hide%6)} ><img src="https://picsum.photos/307/215" /></section>
+    </ImageRow>
   </>
   );
 }
