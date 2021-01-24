@@ -1,6 +1,6 @@
 {
   "name": "react-flex-animations",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Show/hide flexbox items with animation",
   "author": "AskAlice",
   "license": "MIT",
@@ -11,7 +11,9 @@
   "engines": {
     "node": ">=10"
   },
-  "publishConfig": { "registry": "https://registry.npmjs.org/" },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
@@ -25,7 +27,9 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": ">=16.0",
+    "react-dom": ">=16.0",
+    "styled-components": ">=5.2.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -56,13 +60,11 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "@types/styled-components": "^5.1.4",
+    "styled-components": "^5.2.1"
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "@types/styled-components": "^5.1.4",
-    "styled-components": "^5.2.0"
-  }
+  ]
 }

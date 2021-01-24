@@ -6,68 +6,62 @@
 
 ## Install
 
+react-flex-animations depends on styled-components. It's best to keep the number of styled-components installations down, so I've made it a peer dependency that you will need to satisfy in the project you intend to use library with.
+
 ```bash
-npm install --save react-flex-animations
+npm install --save react-flex-animations styled-components
 ```
 
 ## Usage
 
 ```tsx
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-import AnimatedFlexbox from 'react-flex-animations'
+import { AnimatedFlexbox } from 'react-flex-animations'
+import 'react-flex-animations/dist/index.css'
 import styled from 'styled-components';
-
 
 const Nav = styled(AnimatedFlexbox)`
 height:72px;
-`;
-
-const RightNav = styled.section`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    overflow: hidden;
-    margin:0;
-    padding:0;
-`;
-
-const Example = () => {
-    const [hide,setHide] = useState(0);
-      useEffect(() => {
-        const t = setTimeout(()=>setHide(hide+1),2000);
-        return () => {
-          clearTimeout(t);
-        }
-      }, [hide])
-     return (
-        <Nav component="nav" spacerComponent="div">
-          <section data-hidden={hide%4===1}>
-          logo here
-          </section>
-          {/* you can use any html element as a child */}
-          <section data-hidden={hide%4===2}>
-          middle content here
-          </section>
-          {/* components work too! */}
-          <RightNav data-hidden={hide%4===0}>
-            <section>
-              <span role="img" aria-label="Help">❓</span>
-            </section>
-            <section>
-              <span role="img" aria-label="Bell">🔔</span>
-            </section>
-            <section>
-              <span role="img" aria-label="Settings">⚙</span>
-            </section>
-            <section>
-              <span role="img" aria-label="User">👤</span>
-            </section>
-          </RightNav>
-        </Nav>
-     );
+a, section:nth-child(odd) {
+  background:#03d19a;
 }
+section:nth-child(even){
+  background:#bada55;
+}
+`;
+const Test = styled.section`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  margin:0;
+  padding:0;
+`;
+
+const App = () => {
+  const [hide,setHide] = React.useState(0);
+  React.useEffect(() => {
+    const t = setTimeout(()=>setHide(hide+1),2000);
+    return () => {
+      clearTimeout(t);
+    }
+  }, [hide])
+  return (<Nav component="nav" spacerComponent="div">
+      <a href="#!" role="button" data-hidden={hide%4 === 1} >Logo</a>
+      <section className="taskSwitcher" data-hidden={hide%4 === 2}>TaskSwitcher</section>
+      <Test className="rightNav" data-hidden={hide%4 === 0} data-ratio={1}>
+        <section><span role="img" aria-label="Help">❓</span></section>
+        <section><span role="img" aria-label="Bell">🔔</span></section>
+        <section><span role="img" aria-label="Settings">⚙</span></section>
+        <section><span role="img" aria-label="User">👤</span></section>
+      </Test>
+    </Nav>
+    );
+}
+
+export default App
 ```
 
 ## License
